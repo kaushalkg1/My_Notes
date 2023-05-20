@@ -43,3 +43,11 @@ But , We cant modify or process string like an array unless we convert it into a
 # Array.join(' delimeter ') method -it is Array Prototype method. 
 it takes and array of multiple elements and concatnets it into string.
 delemeter is used to seperate each string element formed from array element
+
+# forEach() method only for iterating through  --> Arrays ...
+
+# Array.forEach(function(elem,index){ });
+for each iteration , forEach method executes callback function .
+this callback function provides , current element from array and its index number.
+and we can work with data or process it within call back function.
+

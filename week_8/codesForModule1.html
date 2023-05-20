@@ -68,6 +68,108 @@ displayWeapons(weapons.reverse());
       console.log(isPalindrome('malam')? "Is Palindrom":" Not Palindrom")
 </script>
 
+<script>
+    'use strict';
+
+const weapons2 = `1,Red Orbs,240
+2,Green Orbs,194
+3,Yellow Orbs,154
+4,Kill Machine,80`;
+
+const displayWeapons2 = str =>{
+    const breakByLine= str.split('\n')
+    //console.log(breakByLine)
+  for (const item of breakByLine){
+    let elements =item.split(',')
+    console.log(`${elements[0]}: ${elements[1]} -- > ${elements[2]}`)
+  }
+
+}
+displayWeapons2(weapons2)
+
+// const displayWeapons2 = function (str) {
+//     const breakByLine = str.split('\n');
+//     for (const item of breakByLine) {
+//         let elements = item.split(',');
+//         console.log(`${elements[0]}. ${elements[1]} -- $${elements[2]}`);
+//       }
+//     };
+// displayWeapons2(weapons2);
+
+</script>
+
+
+
+<script>
+    // Array.forEach(function(elem,index){})
+    const weapons3 = `1,Red Orbs,240
+2,Green Orbs,194
+3,Yellow Orbs,154
+4,Kill Machine,80`;
+const weaponsFunction=(element,index)=> {
+    console.log(`${index} :-> ${element }`)
+}
+
+weapons3.split('\n').forEach(weaponsFunction);
+
+
+</script>
+
+<script>
+
+  // we use objects in js application to manipulate data 
+
+
+
+    // Sring to Array To Object.
+   // if you have string data like this->
+    const weapons4 = 
+`No,Name,Price
+1,Red Orbs,240
+2,Green Orbs,194
+3,Yellow Orbs,154
+4,Kill Machine,80`;
+
+// convert String to Array. with new line
+const stringToArray=str=>{
+    let  output=[];
+    str.split('\n').forEach(row=>output.push(row.split(',')))
+
+    // split string with new line to  get row array for each line
+    // iterate through newly formed row array  and again split it by delimeter comma you get 2d array
+  return output
+  }
+  const stringToArrayFunc= stringToArray(weapons4)
+  // console.log(stringToArrayFunc)
+
+  // Now Convert each row Array to Object with first row value as a property
+
+  const arrToObj=arr=>{
+    let  output=[];
+  arr.forEach( (elem,index)=>{
+    // iterate through array 
+ if(index!==0){
+    const obj={}
+    elem.forEach((elem,index)=>{
+        obj[arr[0][index]] = elem
+        //set key = arr[0][index]
+        // set value = elem
+    })
+    // push object to array 
+    output.push(obj); 
+ } 
+//console.log(`${arr[0]}:  `)
+  })
+  return output
+  }
+  
+ 
+  ;
+   //arrToObj()
+   console.log(arrToObj(stringToArrayFunc))
+
+</script>
+
 
 </body>
 </html>
