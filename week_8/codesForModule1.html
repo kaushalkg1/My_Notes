@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes for Module 1</title>
+</head>
+<body>
+    <script>
+// Check if given string is palindrom or not ->( wrong way )
+
+        'use strict'
+        const isPalindrom= word =>{
+            let wordArr=[]
+            let revArr=[]
+            // iterate through letters of parameter word  and push each letter to each array
+            for (const w of word){
+                wordArr.push(w)
+                revArr.push(w)
+                
+            }
+            // returns true of false whether word is palindrom or not.
+            // converts 1st array to string , reverse 2nd array & convert 2nd array to string
+            return wordArr.toString()===revArr.reverse().toString() 
+        }
+        console.log(isPalindrom('makam')?'Is palindrom':'Not Palindrom')
+
+
+    </script>
+    <script>
+        'use strict';
+
+const weapons = [
+  {
+    item: 'Red Orbs',
+    cost: 240,
+  },
+  {
+    item: 'Green Orbs',
+    cost: 194,
+  },
+  {
+    item: 'Yellow Orbs',
+    cost: 154,
+  },
+  {
+    
+    item: 'Kill Machine',
+    cost: 80,
+  },
+];
+
+const displayWeapons = (arr) => {
+  for (const elem of arr.reverse()) {
+    console.log(`${elem.item}:`, `$${elem.cost}`);
+  }
+};
+
+displayWeapons(weapons.reverse());
+    </script>
+
+
+<script>
+   // Check palindrom Using Split and join
+
+    const isPalindrome=word=> word.split('').reverse().join('')===word
+      console.log(isPalindrome('malam')? "Is Palindrom":" Not Palindrom")
+</script>
+
+
+</body>
+</html>
