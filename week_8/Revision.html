@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // tax calculation
+           let prices=[100,200 , 300, 400,500]
+           const Tax = function (tax){
+            this.tax=tax;
+            this.withTax= (prices)=>{
+                let output=[];
+                prices.forEach(elem=>{
+                    let priceWithTax= (this.tax/100)*elem+elem;
+                    output.push(priceWithTax)
+ 
+                })
+                return output;
+            }
+
+           }
+           const gst5=new Tax(5);
+         let pricesWithGst5=  gst5.withTax(prices)
+          console.log(pricesWithGst5)
+
+
+
+    </script>
+</body>
+</html>
