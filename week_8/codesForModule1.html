@@ -170,6 +170,34 @@ const stringToArray=str=>{
 
 </script>
 
+<script>
+    // Tax Calculation on Array
+    // 
+    const prices=[100.150,200,250,300]
+    const Tax = function (tax){
+        this.tax = tax ;
+        this.withTax = (arr)=>{
+            let output=[];
+            arr.forEach(elem=>{
+                let pricesWithTax=(this.tax/100)*elem+elem;
+                // tax calculation for each value in price array
+               // console.log(pricesWithTax)
+                output.push(pricesWithTax);
+                // pushing values to output[] array 
+            })
+            return output;
+             // returning output  array with tax calculation
+        }
+    }
+    const gst5 = new Tax(5);
+    // use this tax slab to set tax on any set of prices.
+    // gst5 is object of Tax Prototype , so we can access all its properties and methods using object gst5.withTax(anySetOfPrices)
+    console.log(gst5.withTax(prices));
+
+
+
+    // Application-> cart items object -> array of object, -> with prices as key:value pair  and discount, promo code etc applied to each item prices
+</script>
 
 </body>
 </html>
