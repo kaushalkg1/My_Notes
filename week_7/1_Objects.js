@@ -29,7 +29,7 @@
        // 2 ways
          obj1.name // dot notation
          obj1['name'] // square bracket notation. Inportant as we can put variable inside square bracket .
-          console.log(obj1.location['city'])
+        //   console.log(obj1.location['city'])
    
          // changing values 
         obj1.hasJob=true // dot notation
@@ -42,8 +42,8 @@
         delete obj1.popat;
         //  console.log(obj1)
      
-       console.log(`hi , my name is ${obj1.name } &  live in ${ obj1.location.city +" , "+ obj1.location.Country}
-        ${obj1.hasJob?'I work somewhere':'I dont work'}`)
+    //    console.log(`hi , my name is ${obj1.name } &  live in ${ obj1.location.city +" , "+ obj1.location.Country}
+    //     ${obj1.hasJob?'I work somewhere':'I dont work'}`)
 
 
 
@@ -62,7 +62,7 @@
 
         console.log(` Fruit is ${fruit} And shake is ${shake}`);
         shake = 'pomgranate'
-        console.log(` Fruit is ${fruit} And shake is ${shake}`);
+        // console.log(` Fruit is ${fruit} And shake is ${shake}`);
          
        // this is an example of pass by value because only value is getting changed
 
@@ -83,8 +83,8 @@
             location: obj2.location,
              company: obj2.company
         }
-        console.log(kaushal)
-        console.log(obj2)
+        // console.log(kaushal)
+        // console.log(obj2)
 
         // change city value of kaushal
         //kaushal.location.city="Nagpur";
@@ -102,7 +102,39 @@
                 city:'Nagpur',
                 Country:'India'
             };
-            console.log(kaushal)
-        console.log(obj2)
+        //     console.log(kaushal)
+        // console.log(obj2)
 
          
+// 
+       let  obj3={...obj1,job:'Entrepreneur'}  // spread operator creates deep copy of  object in memory 
+        // both  Objects obj3 & obj1  point to  Different memory locations .
+        //changing one objects property will  not  affect other objects properties 
+
+        // Deep Copy Doesnt work with nested objects as nested object is a shallow copy. 
+        // you have to use spread operator with nested object also to create its deep copy.
+
+
+       let  obj4=obj1; // assigning one  object to another object using asignment operator
+         //points to the same object only  or reference to the same object//
+        //, obj4 and obj1 points to same object. it is called  shalow copy , changing one objects property will 
+        // reflect in other objects properties also . 
+          obj1.name="kka"; 
+        obj2.name="Raka";
+        obj3.name="Daka"; 
+        obj4.name="Maka"; 
+        //  console.log(obj1);
+        //  console.log(obj2);
+        //  console.log(obj3);
+        //  console.log(obj4);
+         
+
+        // function as object property->
+        let funcObj={
+            name:'Kaushal',
+            functLastName:function(){
+                console.log(` my name is ${this.name} Gedam`);
+            }
+        }
+        // calling function 
+        funcObj.functLastName()
