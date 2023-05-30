@@ -134,7 +134,13 @@
             name:'Kaushal',
             functLastName:function(){
                 console.log(` my name is ${this.name} Gedam`);
+            },
+            funcArrow:()=>{
+                // objects do not support Arrow Function.
+                console.log(` my name is ${this.name} Gedam`);
+          
             }
         }
         // calling function 
-        funcObj.functLastName()
+        funcObj.functLastName() 
+        funcObj.funcArrow()

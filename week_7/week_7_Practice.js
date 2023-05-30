@@ -1,6 +1,10 @@
 'use strict'
-let name='Kaushal';
-let job ='Entrepreneur';
-console.log(`hey, my name is 
-${name} and I am an ${job}  \u{2122}
-`)
+let obj1={
+    name:'kaushal',
+    age:32,
+    functionFull:()=>{
+        console.log(`${this.name}`)
+    }
+}
+
+obj1.functionFull()
