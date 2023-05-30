@@ -144,3 +144,48 @@
         // calling function 
         funcObj.functLastName() 
         funcObj.funcArrow()
+
+// Spread operator in 1 level nested Objects
+// let obj1 = {
+//     name:'kaushal',
+//     age:32,
+//     functionFull:function(){
+//         console.log(`${this.location.city}`)
+//     },
+//     location:{
+//         city:'Amravati',
+//         State:'Maharashtra'
+//     }
+// }
+
+
+// let obj2 = {...obj1, location:{...obj1.location} }
+// obj2.location.city='Pune'
+// obj1.location.city='Mumbai'
+
+// obj1.functionFull()
+// obj2.functionFull()
+
+// Spread operator in 2nd level nested Objects
+
+let obj1 = {
+    name:'kaushal',
+    age:32,
+    functionFull:function(){
+        console.log(`block ${this.location.city.block}`)
+    },
+    location:{
+        city:{ town:'Amravati',
+               block:201     }
+        ,
+        State:'Maharashtra'
+    }
+}
+
+
+let obj2 = {...obj1, location:{...obj1.location, city:{...obj1.location.city}  }  }
+obj2.location.city.block=420
+obj1.location.city.block=333
+
+obj1.functionFull()
+obj2.functionFull()
