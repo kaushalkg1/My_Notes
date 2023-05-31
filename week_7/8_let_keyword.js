@@ -72,10 +72,12 @@ console.log(`The original Count is ${count}`)
 //  quick fix -> use let 
 // The original Count is 200
 
-// // variables created using var are hoisted and initialized later -> they are first declared with initial value as undefined  then initialized
+// // variables created using var are hoisted and initialized later ->
+// they are first declared with initial value as undefined  then initialized
 // console.log(z) // op-> undefined
 //  var z = 20  
 //  // variables created using let are not hoisted -> 
 //  // it will give error if you use it before initializing it. 
+// this is called temporal dead zone policy for let keyword
 //  console.log(y)
 //  let y = 30  // op -> error
