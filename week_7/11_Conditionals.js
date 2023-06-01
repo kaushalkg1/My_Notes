@@ -73,18 +73,15 @@ switch (action) {
 
 
 }
-// logical And operator && 
-// operand1 && operand2 -> this expression evaluates from left to right , if both operands are true -> right operand is returned
 
-// true true -> operand2
-// true false -> false
-// false true -> false
+// Set Default values when we are depending on the variable value
+// logical And operator && 
+// operand1 && operand2 -> this expression evaluates from left to right , 
+//if  operand on left true -> right operand is returned
 
 // logical OR operator ||
 // operand1 && operand2 -> this expression evaluates from left to right ,
-// if left operand is false -> right operand is returned
-// true true -> operand2
-// false true -> operand2
+// if  operand on left is not true  -> right operand is returned
 
 // logical AND assignment operator
 // operand &&= value // it will assign value on the right to the operand on left if operand on left is not falsy
@@ -114,3 +111,55 @@ let greeting = `Hello , ${user||'Stranger'} `;
  hasBeenDownloaded &&= 'Download complete...'
  hasBeenDownloaded ||= 'Downloading ...'
  console.log(hasBeenDownloaded)
+
+ // nullish coelescing operator ??
+
+// it works similar to logical OR assignment operator but falsy is limited to null or undefined
+// operand ||= value // it will assign value on the right to the operand on left if operand on left  is falsy.
+let quantity = 0;
+
+// use ||  in case when you want to consider , All falsy values
+
+// use ??  in case when you want to consider only null & undefined as falsy values And not ->  0, '' , NaN as false values
+
+console.log(`Quantity is ${quantity || 'NaN'}`)
+console.log(`Quantity is ${quantity ?? 'NaN'}`)
+
+
+// optional chaining operator ->  ?.
+
+let userInfo ={
+    id : 1 ,
+    name : 'kaushal',
+    address : {
+
+        pin:444602
+    }
+}
+
+console.log(userInfo.address.pin);
+
+// console.log(userInfo.addressnew.pin); -> Error (intermediate property doesnot exist)
+console.log(userInfo.addressnew?.pin ?? 'Not Available'); 
+// optional chaining operator ->  ?.  -> returns undefined -> no  error 
+// optional chaining operator doesnot execute right property if left property is not present -> and returns undefined
+
+let studentInfo =[{
+    id : 1 ,
+    name : 'kaushal',
+    address : {
+
+        pin:444602
+    }
+},{
+    id : 2 ,
+    name : 'Ujwal',
+    address : {
+
+        city:444602
+    }
+}]
+console.log(studentInfo[0].address?.pin ?? 'Not Available'); 
+console.log(studentInfo[1].address?.pin ?? 'Not Available'); 
+
+
