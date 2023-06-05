@@ -156,7 +156,7 @@ let studentInfo =[{
     name : 'Ujwal',
     address : {
 
-        city:444602
+        city:444602 
     }
 }]
 console.log(studentInfo[0].address?.pin ?? 'Not Available'); 

@@ -1,4 +1,3 @@
-// for object
 
 let obj={
     name:'kaushal',
@@ -17,4 +16,4 @@ console.log(obj['full Name'])
 let arr=['kaushal',32]
 const [myname,myage]=arr // Destructuring Array . 
 // here myname points to arr[0] , myage points to arr[1]
-console.log(myname)
+console.log(`${(myname)}`)
