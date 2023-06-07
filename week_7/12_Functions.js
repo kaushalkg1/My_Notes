@@ -234,3 +234,75 @@ console.log(user1 ) // returning object
 let user2 =createUserTwo ('uj','yes') // arrow function returning object
 console.log(user2)// returning object
 
+// constructor functions // it can be created using function declaration & function expressions 
+// it is a basis for object oriented javascript 
+//  constructor function is a template for an entity , eg product  
+// this template can then be used to create  any type of product which then becomes object for template (constructor function)
+// base template can have methods which can be used to access and manipulate data of objects  
+
+//name of constructor function must begin with uppercase character
+// inside constructor function use this keyword to instantiate properties of objects ( 'this' is used to get context of current object )
+// to create object from this template we use new keyword along with construction function Name (Uppercase)
+// (we always have to use new keyword to instantiate an instance or create object of constructor function) 
+// this instance can have values  to set in constructor function 
+// and methods inside constructor functions can be used to manipulate values of object ( or instance of constructor function (template) )
+
+let today = new Date().getDay() // new keyword to create object of date constructor function also  Date is uppercase //
+    // getDay() is a member method defined in Template Date() .
+
+
+    function User(name,age,isAdmin){ // user function is a prototype or base template from which we derive objects as its instances
+
+     this.name= name; // semicolon -> it is not an object (no comma), it is just a constructor function
+     this.age=age;
+     this.isAdmin = isAdmin;
+     this.canDrive = ()=>(this.age>18? 'yes' : 'no') 
+     // arrow function inside canDrive function so it has a context of object 
+     //  this context in arrow function is derived from parent object  
+     // this way you assign values to properties of object when you create its instance from constructor function
+
+    }
+
+    const kg = new User('kaushal',32,true);
+    const uj = new User('Ujwal',34,false);
+    console.log(kg)
+    console.log(uj.canDrive()) // invoke function canDrive() -> it is unique for particular object ->
+    // canDrive()  have isolated context for particular object 
+    // constructor functions without parameters .
+    function Colors(){
+      this.mycolor=['red','blue','black']
+    }
+    const kk= new Colors; // no parenthesis ->  for no arguments
+    console.log(kk.mycolor)
+
+    'use strict';
+const Person = function (firstname, lastname, age, email) {
+    this.firstName = firstname;
+    this.lastName = lastname;
+    this.age = age;
+    this.email = email;
+    this.introduction = () => `${this.firstName} is ${this.age} years old`;
+    this.canDrive = () => (this.age >= 18 ? 'Yes' : 'No');
+  };
+  const Joe = new Person('Joe', 'Mason', 17, 'joe.m@mycorp.com');
+console.log(Joe.introduction());
+console.log(`Can the user drive? ${Joe.canDrive()}`);
+const Jane = new Person('Jane', 'Mandenga', 28, 'jane@mycorp.com');
+console.log(Jane.introduction());
+console.log(`Can the user drive? ${Jane.canDrive()}`);
+
+// default values in function  // no need to write extra line of codes such as nullish coelescing operators. 
+//Function parameters default to undefined if no value is assigned to them
+const myNamek = function (name='none') {
+  return {
+    name, // object shorthand syntax when you use  same name of object as parameter
+   // name:name
+  }
+
+}
+console.log(myNamek())
+
+console.log(myNamek('kaushal'))
+
+
+
