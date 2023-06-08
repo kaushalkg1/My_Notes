@@ -322,3 +322,41 @@ console.log(myNamek('kaushal'))
   }
   console.log(average(1,2,3,4,5,))
   console.log(average(1,2))
+
+
+
+  // recursive functions ->  
+
+  //  function invoke itself creating a loop  
+
+  const recursionCounter = function(maxCount,callback,count=0){
+  // callback is a function passed in a parameter ,
+  // callback is a parameter that contain function ,
+  // when you pass function as parameter to another function , it is called callback function
+  // you can execute callback like a function -> callback()
+  // 
+
+if(count<maxCount){
+  callback(count);
+  recursionCounter(maxCount,callback,count+1)
+}
+
+  }
+
+  //invoke function ->
+  let callback=function(num){
+ console.log(`I run ${num}  Times`)
+  }
+  recursionCounter(10,callback)
+
+  let recFruit = function( arrLength,callbackFruit, index=0 ){
+   if(index<arrLength){
+    callbackFruit(index);
+    recFruit( arrLength, callbackFruit ,  index+1 )
+   }
+  }
+
+  let arrFruits=['banana','apple','pineapple','beat']
+
+  recFruit(arrFruits.length,function(index){    console.log(`  ${arrFruits[index]}`)})
+
