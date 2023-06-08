@@ -306,3 +306,19 @@ console.log(myNamek('kaushal'))
 
 
 
+
+
+   //  arguments.length  
+    // argument property is available only in function declaration and function expressions
+    // argument property is not available  in arrow functions
+    // it is array like structure (it is not array so not available in arrow functions) of all arguments passed to the a function during function invocation and it can be accessed inside the function 
+    const average = function(){
+      let sum=0
+      for(let argument of arguments){
+          sum += argument;
+              }
+              return sum/arguments.length;
+
+  }
+  console.log(average(1,2,3,4,5,))
+  console.log(average(1,2))
