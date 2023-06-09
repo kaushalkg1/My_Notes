@@ -3,6 +3,8 @@
 // javascript is a single threaded language // it runs in browser in single main thread 
 
 // In Chrome - V8 engine is there -> it has call stack to execute the javascript function  .
+// last in first out 
+// function call in stack -> first , console.log() statement in stack - second -> last one goes out the stack, then first goes out the stack . 
 // first the function is put on call stack and it waits till it executes the function and that function is removed from stack
 // and next function comes in stack 
 // in case if the function has heavy processing it will stay in call stack for long time and next function will not be 
@@ -21,7 +23,10 @@
 
 // if you press a button to start a task  webpage is completely blocked until it finishes the task -> 
 
-// to overcome this , setTimeOut() ,setInterval() (not a part of javascript engine | these are part of Web API )
+// to overcome this , setTimeOut(callback,time) ,setInterval() (not a part of javascript engine | these are part of Web API )
+// setTimeOut() is used to set countdown timer and executes a callback function when time elapses 
+setTimeout(()=>{console.log('hi')},3000)
+console.log('hola');
 // when function executes it goes to call stack and if its code contains setTimeOut(10000)  , it instantly quit the stack 
 // and goes to web API till the timer is off (10 sec), so the call stack is free and the third function goes to stack and executes.
 
